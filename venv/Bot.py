@@ -24,6 +24,5 @@ class telegram_bot():
 
     def read_token_from_config_file(self, config):
         parser = cfg.ConfigParser()
-        parser.read(os.path.join(os.path.dirname(__file__),config))
-
+        parser.read(r"config.cfg")
         return parser.get('creds', 'token')

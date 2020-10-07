@@ -1,6 +1,7 @@
 import requests
 import json
 import configparser as cfg
+import os
 
 
 class telegram_bot():
@@ -23,5 +24,6 @@ class telegram_bot():
 
     def read_token_from_config_file(self, config):
         parser = cfg.ConfigParser()
-        parser.read(config)
+        parser.read(os.path.join(os.path.dirname(__file__),config))
+
         return parser.get('creds', 'token')
